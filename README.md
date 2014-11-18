@@ -2,7 +2,7 @@ PHP Instrument Usage Billing/Scheduling
 =====
 * Used to track core facilities instrument usage by tracking user logins and session times.
 
-#FEATURES:
+####FEATURES:
 * Instrument scheduling (Using Full Calendar)
 * Permissions (Pages,Instrument Schedules)
 * Active Directory Integration / LDAP (easily modified)
