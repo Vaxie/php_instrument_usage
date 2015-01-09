@@ -30,8 +30,12 @@ if ($selectedUser->GetUserId() == $authenticate->getAuthenticatedUser()->GetUser
             $selectedUser->SetRateId($_POST['rate']);
             $selectedUser->SetStatusId($_POST['status']);
             $selectedUser->SetUserRoleId($_POST['user_role_id']);
+            $selectedUser->SetGroupId($_POST['group']);
         }
-        $selectedUser->SetDefaultCfop($_POST['user_cfop_id']);
+        if(isset($_POST['user_cfop_id']))
+        {
+            $selectedUser->SetDefaultCfop($_POST['user_cfop_id']);
+        }
         $selectedUser->UpdateUser();
 
     }
