@@ -151,6 +151,9 @@ if ($sessionIdSelected > 0) {
                 //Change usage to hours
                 $monthlyUsage[$rowId]['elapsed'] = round($monthSession['elapsed']/60,2);
 
+                //Minimum usage time
+                $monthlyUsage[$rowId]['min_use_time'] = round(($monthSession['min_use_time'] / 60), 2);
+
                 //Show Edit under Options
                 $monthlyUsage[$rowId]['options'] = "<a id=" . $monthSession['id'] . " href=\"index.php?view=" . $pages->GetPageId('Facility Billing') . "&session_id=" . $monthSession['id'] . "&rowid=".$rowId."\">Edit</a>";
 
@@ -234,7 +237,7 @@ if ($sessionIdSelected > 0) {
 
             echo "<div class=\"row-fluid\">";
             echo VisualizeData::ListSessionsTable($monthlyUsage,
-                array('id','Name','Date','CFOP','Instrument','Hours','Min. Hours','Rate','Rate Type','Total','options'),
+                array('id','Name','Date','CFOP','Instrument','Hours','Min. Hours','Rate per Hours','Rate Type','Total','options'),
                 array('id','user_name','start','cfop','full_device_name','elapsed','min_use_time','rate','rate_name','total','options'),$rateTypeName."_table",$rowSelected);
 
             echo "</div></div></div>";
